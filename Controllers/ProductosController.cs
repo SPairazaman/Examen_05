@@ -44,6 +44,24 @@ namespace Examen_05.Controllers
         public ResponseBase Insertar(ProductoRequest request)
         {
             ResponseBase response = new ResponseBase();
+            if (String.IsNullOrEmpty(request.Nombre))
+            {
+                response.CodigoError = -2;
+                response.Mensaje = "Nombre de producto no puede ser null o vacío";
+                return response;
+            }
+            if (Convert.ToInt32(request.Precio)<=0)
+            {
+                response.CodigoError = -2;
+                response.Mensaje = "precio debe ser mayor a cero";
+                return response;
+            }
+            if (Convert.ToInt32(request.CategoriaID) <= 0)
+            {
+                response.CodigoError = -2;
+                response.Mensaje = "Categoria debe ser mayor a cero";
+                return response;
+            }
             try
             {
                 Producto producto = new Producto

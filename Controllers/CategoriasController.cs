@@ -43,6 +43,13 @@ namespace Examen_05.Controllers
         public ResponseBase Insertar(CategoriaRequest request)
         {
             ResponseBase response = new ResponseBase();
+
+            if (String.IsNullOrEmpty(request.Nombre))
+            {
+                response.CodigoError = -2;
+                response.Mensaje = "Nombre de categoria no puede ser null o vacío";
+                return response;
+            }
             try
             {
                 Categoria categoria = new Categoria{
