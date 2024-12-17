@@ -7,7 +7,5 @@ namespace Examen_05.Response
         public int ProductoID { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
-
-        public string Categoria { get; set; }
     }
 }
