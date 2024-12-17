@@ -83,6 +83,7 @@ namespace Examen_05.Controllers
                 {
                     var categoria = _context.Categorias.Find(id);
 
+                    response.ID = categoria.CategoriaID;
                     response.Nombre = categoria.Nombre;
                     response.Descripcion = categoria.Descripcion;
                 }
