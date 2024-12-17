@@ -25,6 +25,7 @@ namespace Examen_05.Controllers
                     {
                         response.Add(new CategoriaResponse
                         {
+                            ID=categoria.CategoriaID,
                             Nombre = categoria.Nombre,
                             Descripcion = categoria.Descripcion
                         });
